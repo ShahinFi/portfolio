@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(9, 9, 46);
+  color: white;
+}
+
+#portfolio-container {
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagonArea {
+  display: flex;
+  gap: min(2vw, 1.3vh);
+}
+
+.second {
+  transform: translateY(max(-3.33vw, -2.5vh));
+}
+
+.third {
+  transform: translateY(max(-6.66vw, -5vh));
+}
+
+.hexagon {
+  width: min(20vw, 15vh);
+  height: min(20vw, 15vh);
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  background: rgb(111, 0, 170);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.hexagon i {
+  font-size: min(6vw, 4.5vh);
+  margin: 2px;
+}
+.hexagon h3 {
+  font-size: min(3vw, 2.25vh);
+}
+
+.hexagon:hover {
+  background-color: rgb(0, 159, 177);
+  scale: 0.9;
+}
+
+.hexagon svg {
+  color: white;
+  width: min(6vw, 4.5vh);
+  height: min(6vw, 4.5vh);
+  margin: 2px;
+}

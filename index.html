@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shine's Portfolio</title>
+    <link rel="icon" href="Images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="animationRules.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link id="pageStyles" rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  </head>
+  <body>
+    <header id="top-bar">
+      <div id="logo-container-base">
+        <div id="logo-container">
+          <div id="logo">
+            <span id="logo-text">S</span>
+          </div>
+        </div>
+      </div>
+      <nav id="navbar">
+        <div id="menu-toggle">
+          <span class="toggles" id="toggle1"></span>
+          <span class="toggles" id="toggle2"></span>
+          <span class="toggles" id="toggle3"></span>
+        </div>
+        <ul id="navbar-list">
+          <li><a id="link-home" class="nav-a" href="#home">Home</a></li>
+          <li><a id="link-about" class="nav-a" href="#about">About</a></li>
+          <li>
+            <a id="link-portfolio" class="nav-a" href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a id="link-contact" class="nav-a" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="night-sky-base">
+      <div id="night-sky"></div>
+    </div>
+    <section id="pageHTML">
+      <div id="Master-grid"></div>
+      <div id="writing">
+        <div id="empty-top"></div>
+        <div id="sub-writing">
+          <p id="greeting">Hi, my name is</p>
+          <h1 id="name">Shine.</h1>
+          <p id="description">
+            I'm a software engineering student with a passion for creativity and
+            innovation. Born to create and build, I bring an independent mindset
+            to every project. Let's build something extraordinary together.
+          </p>
+        </div>
+        <div id="empty-bottom"></div>
+      </div>
+      <div id="photo">
+        <div id="photo-empty-top"></div>
+        <div id="canvas-container"></div>
+        <div id="photo-empty-bottom"></div>
+      </div>
+      <div id="wormhole-container-base">
+        <div id="wormole-container">
+          <div id="wormhole">
+            <div id="wormhole-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="mesh-container-base">
+      <div id="mesh-container">
+        <div id="column-container"></div>
+        <div id="row-container"></div>
+      </div>
+    </div>
+  </body>
+  <script src="home.js"></script>
+  <script src="about.js"></script>
+  <script src="portfolio.js"></script>
+  <script src="contact.js"></script>
+  <script src="starrySky.js"></script>
+  <script src="grid.js"></script>
+  <script src="navBar.js"></script>
+  <script src="sketch.js"></script>
+  <script src="links.js"></script>
+  <script src="initialize.js"></script>
+  <script src="transition.js"></script>
+</html>

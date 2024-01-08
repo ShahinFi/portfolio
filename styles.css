@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mesh-perspective-vh: 33.33vh;
+  --mesh-perspective-vw: 30vw;
+  --mesh-height-vh: 50vh;
+  --mesh-height-vw: 60vw;
+  --wormhole-vh: 35vh;
+  --wormhole-vw: 42vw;
+  --color-frames: #5dc3ce;
+  --color-containers: rgba(15, 69, 145, 0.171);
+  --shadow-color: rgba(157, 20, 139, 0.733);
+  --color-mesh: rgb(44, 198, 254);
+  --shadow-color-mesh: rgba(42, 35, 255, 0.668);
+  --shadow-left-wormhole: rgba(44, 96, 254, 0.671);
+  --shadow-right-wormhole: rgba(44, 96, 254, 0.671);
+  --shadow-inset-wormhole: rgba(44, 96, 254, 0.671);
+  --color-wormhole: rgb(44, 198, 254);
+  --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system,
+    system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --text-color: #cccccc;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #334855;
+  border: 3px solid #011826;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #011826;
+}
+
+body {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgb(9, 9, 46);
+  color: #9ca5a8;
+  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system,
+    system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  color: #5dc3ce;
+  text-align: center;
+  justify-content: center;
+}
+
+a:active,
+a:visited {
+  color: #5dc3ce;
+}
+
+#top-bar {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: transparent;
+}
+
+#top-bar.with-shadow {
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+}
+
+#logo-container-base {
+  flex: 5;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+#logo-container {
+  width: 65px;
+  height: 65px;
+  margin-left: 30px;
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  transform-origin: 50%;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateZ(45deg);
+  overflow: hidden;
+  background-color: black;
+  border: solid #5dc3ce 3px;
+  border-radius: 6px;
+  box-shadow: -2.5px 2.5px 5px 0px rgb(86, 29, 255),
+    2.5px -2.5px 5px 0px rgb(86, 29, 255), inset 5px -5px 10px rgb(86, 29, 255),
+    inset -5px 5px 10px rgb(86, 29, 255);
+}
+
+#logo-text {
+  transform-style: preserve-3d;
+  font-family: Orbitron;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  transform: rotateZ(-45deg);
+  font-size: 28px;
+  color: #6afaff;
+  text-shadow: 1.5px 1.5px 3px #ff15d8, -1.5px -1.5px 3px #bf00ff;
+}
+
+#logo-container:hover #logo {
+  animation: rotateLogo 3s infinite;
+}
+
+#logo-container:hover #logo-text {
+  animation: counterRotateLogo 3s infinite;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: ScaleX(1) rotateZ(45deg);
+  }
+  30% {
+    transform: ScaleX(0) rotateZ(45deg);
+  }
+  40% {
+    transform: ScaleX(0) rotateZ(45deg);
+  }
+  70% {
+    transform: ScaleX(1) rotateZ(45deg);
+  }
+  100% {
+    transform: ScaleX(1) rotateZ(45deg);
+  }
+}
+
+@keyframes counterRotateLogo {
+  0% {
+    transform: rotateZ(-45deg) ScaleX(1);
+  }
+  30% {
+    transform: rotateZ(-45deg) ScaleX(5);
+  }
+  40% {
+    transform: rotateZ(-45deg) ScaleX(5);
+  }
+  70% {
+    transform: rotateZ(-45deg) ScaleX(1);
+  }
+  100% {
+    transform: rotateZ(-45deg) ScaleX(1);
+  }
+}
+
+#navbar {
+  font-size: 15px;
+  width: 500px;
+  margin-right: 20px;
+  display: flex;
+}
+
+#navbar-list {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+}
+
+#navbar-list li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-a {
+  border: solid #6afaff 2px;
+  transform-style: preserve-3d;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 85px;
+  line-height: 37px;
+  border-radius: 6px;
+}
+
+.nav-a:hover {
+  color: #5dc3ce;
+  border: solid #5dc3ce 3px;
+  box-shadow: 0px 0px 4px 3px rgb(86, 29, 255),
+    inset 0px 0px 4px 3px rgb(86, 29, 255);
+  text-shadow: -1.5px -1.5px 1.5px rgb(86, 29, 255),
+    -1.5px 1.5px 1.5px rgb(86, 29, 255), 1.5px -1.5px 1.5px rgb(86, 29, 255),
+    1.5px 1.5px 1.5px rgb(86, 29, 255);
+}
+
+#menu-toggle {
+  height: 80px;
+  cursor: pointer;
+  display: none;
+  width: 35px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.toggles {
+  background-color: #5dc3ce;
+  display: block;
+  height: 3px;
+  margin: 6px 0;
+  transition: 1s;
+  right: 0px;
+  margin: 3px;
+}
+
+#toggle1 {
+  width: 100%;
+}
+
+#toggle2 {
+  width: 75%;
+}
+
+#toggle3 {
+  width: 50%;
+}
+
+#night-sky-base {
+  margin-top: 0px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  bottom: 0%;
+}
+
+#night-sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  /* animation: blink 2s infinite alternate; */
+}
+
+#mesh-container-base {
+  z-index: 4;
+  display: flex;
+  height: min(var(--mesh-height-vh), var(--mesh-height-vw));
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+}
+
+#mesh-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  perspective: min(var(--mesh-perspective-vh), var(--mesh-perspective-vw));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#column-container {
+  position: absolute;
+  z-index: 2;
+  width: 200%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  transform: rotateX(60deg) rotateY(0);
+  /* background-color: #011826; */
+  background: linear-gradient(
+    to top,
+    rgb(0, 19, 22) 30%,
+    rgba(1, 225, 255, 0.295) 100%
+  );
+  box-shadow: 0px 0px 150px 20px rgb(30, 221, 255);
+  /* inset 0px 80px 60px 10px rgba(172, 124, 250, 0.757); */
+  animation: transformMeshColumns 2s linear ease-in-out;
+  /* transform: rotateX(60deg) rotateY(0) translateX(5.1%); */
+}
+
+.mesh-column {
+  overflow: hidden;
+  flex: 1;
+  border: solid var(--color-mesh) 2px;
+  opacity: 90%;
+  transform-style: preserve-3d;
+  height: 100%;
+  box-shadow: inset 0px 0px 3px 2px var(--shadow-color-mesh);
+}
+
+.mesh-column:nth-child(even) {
+  border: none;
+}
+
+#row-container {
+  position: absolute;
+  z-index: 3;
+  width: 200%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  transform: rotateX(60deg) rotateY(0);
+  overflow: hidden;
+  /* animation: transformMeshRows 20s linear infinite; */
+  /* transform: rotateX(60deg) rotateY(0) translateY(6.73%); */
+}
+
+.mesh-row {
+  flex: 1;
+  border: solid var(--color-mesh) 2px;
+  box-shadow: inset 0px 0px 3px 2px var(--shadow-color-mesh);
+  opacity: 90%;
+  transform-style: preserve-3d;
+  width: 100%;
+  background-color: transparent;
+}
+
+.mesh-row:nth-child(even) {
+  border: none;
+}
+
+#pageHTML {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+#pageHTML.hide {
+  opacity: 0;
+}
+#pageHTML.show {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 875px) {
+  :root {
+    --mesh-perspective-vw: 30vw;
+    --mesh-height-vw: 45vw;
+    --wormhole-vw: 31.5vw;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  :root {
+    --mesh-perspective-vw: 187.5px;
+    --mesh-height-vw: 281px;
+    --wormhole-vw: 197px;
+  }
+
+  #logo-container {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+  #logo {
+    border: solid #5dc3ce 2px;
+    border-radius: 5px;
+    box-shadow: -2px 2px 4px 0px rgb(86, 29, 255),
+      2px -2px 4px 0px rgb(86, 29, 255), inset 3px -3px 6px rgb(86, 29, 255),
+      inset -3px 3px 6px rgb(86, 29, 255);
+  }
+  #logo-text {
+    font-size: 22px;
+    text-shadow: 1px 1px 2px #ff15d8, -1px -1px 2px #bf00ff;
+  }
+  #menu-toggle {
+    display: flex;
+    flex: 0;
+    margin-top: 20px;
+  }
+
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    height: 260px;
+  }
+
+  #navbar-list {
+    display: none;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  #navbar.active #navbar-list {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  :root {
+    --mesh-perspective-vw: min(20.95vh, 57.1vw);
+    --mesh-height-vw: min(31.4vh, 85.7vw);
+    --wormhole-vw: min(22vh, 60vw);
+  }
+}
