@@ -16,7 +16,7 @@ function links() {
   }
 
   window.homeEvent = function () {
-    transition(2000, 2000, 'home')
+    transitionHome(2000, 2000)
   }
   linkContact.addEventListener('click', contactEvent)
   linkPortfolio.addEventListener('click', portfolioEvent)

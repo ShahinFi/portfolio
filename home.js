@@ -146,8 +146,6 @@ function wormholeSizes() {
   wormhole.style.bottom = `${
     topPosition + 0.14 * wormholeHeight - 0.35 * wormholeHeight
   }px`
-  console.log(wormhole)
-  console.log(wormhole.getBoundingClientRect().height)
 }
 
 function writingSizes() {

@@ -19,14 +19,7 @@ function transition(transitionTime, transitionTime2, destination) {
     let pageBottom = window.innerHeight
     let topPosition = rowContainer.getBoundingClientRect().top
 
-    const navbar = document.getElementById('navbar')
-    if (navbar.classList.contains('active')) {
-      navbar.classList.remove('active')
-    }
-    const topBar = document.getElementById('top-bar')
-    topBar.style.transition = 'transform 1s ease'
-    topBar.style.transform = 'translateY(-100%)'
-
+    removeTopBar()
     window['leave_' + currentLocation]()
     initializeTransitionGridAnimation()
 
@@ -192,4 +185,14 @@ function transition(transitionTime, transitionTime2, destination) {
       styleSheet.insertRule(keyframesRows, 1)
     }
   }
+}
+
+function removeTopBar() {
+  const navbar = document.getElementById('navbar')
+  if (navbar.classList.contains('active')) {
+    navbar.classList.remove('active')
+  }
+  const topBar = document.getElementById('top-bar')
+  topBar.style.transition = 'transform 1s ease'
+  topBar.style.transform = 'translateY(-100%)'
 }
