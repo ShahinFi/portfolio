@@ -115,7 +115,6 @@ function animateGrid() {
     }`
     styleSheet.insertRule(animationColumns, 2)
     styleSheet.insertRule(keyframesColumns, 3)
-    console.log('Grid Animation Initialized')
   }
 
   function updateRowsMotion(duration) {

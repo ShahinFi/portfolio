@@ -3,9 +3,11 @@ function about() {
     topBarAnimationMain()
     animateGrid()
     aboutContainerSizes()
+    // fontSizes()
     document.getElementById('pageHTML').classList.add('show')
     document.getElementById('pageHTML').classList.remove('hide')
     window.addEventListener('resize', aboutContainerSizes)
+    // window.addEventListener('resize', fontSizes)
     console.log('about')
   }, 100)
 }
@@ -20,6 +22,7 @@ function leave_about() {
   document.getElementById('pageHTML').classList.add('hide')
   document.getElementById('pageHTML').classList.remove('show')
   window.removeEventListener('resize', aboutContainerSizes)
+  // window.removeEventListener('resize', fontSizes)
   console.log('leave about')
 }
 
@@ -36,3 +39,15 @@ function aboutContainerSizes() {
     aboutContainer.style.top = `${80}px`
   }
 }
+
+// function fontSizes() {
+//   const aboutMeContainer = document.getElementById('about-me-container')
+//   const aboutMeContainerWidth = aboutMeContainer.getBoundingClientRect().width
+//   const aboutMeContainerHeight = aboutMeContainer.getBoundingClientRect().height
+//   aboutMeContainer.style.fontSize = `${
+//     6.6 +
+//     0.000024 *
+//       Math.pow(aboutMeContainerWidth, 1) *
+//       Math.pow(aboutMeContainerHeight, 1)
+//   }px`
+// }

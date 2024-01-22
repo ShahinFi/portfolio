@@ -25,6 +25,7 @@ function transitionMain(
     loadFiles(html, destination)
     startHomeFunctions()
     setTimeout(() => {
+      wormholeSizes()
       startWormholeContraction(transitionTimeIn - 200)
     }, 100)
   }, 800)
@@ -70,7 +71,6 @@ function startHomeFunctions() {
   layer1.style.backgroundImage = 'none'
   // layer2.style.backgroundImage = 'none'
   layer3.style.backgroundImage = 'none'
-  wormholeSizes()
   writingSizes()
   myP5 = new p5(mySketch)
   photoSizes()

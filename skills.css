@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(9, 9, 46);
+  color: white;
+}
+
+#skills-container-base {
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagonArea {
+  display: flex;
+}
+
+#hexagonArea1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translateY(min(3.5vw, 2.3vh));
+}
+
+#hexagonArea2 {
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#hexagonArea3 {
+  transform: translateY(max(-3.5vw, -2.3vh));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hexagon {
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  background: rgba(208, 90, 255, 0.315);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.hexagon i {
+  font-size: min(7vw, 4.5vh);
+  margin: 2px;
+  color: white;
+  opacity: 70%;
+}
+.hexagon h3 {
+  font-size: min(3.2vw, 2.25vh);
+  color: white;
+  opacity: 70%;
+}
+
+.hexagon:hover {
+  background-color: rgba(62, 255, 239, 0.668);
+  scale: 0.9;
+}
+
+.hexagon svg {
+  width: min(7vw, 4.5vh);
+  height: min(7vw, 4.5vh);
+  margin: 2px;
+}
+
+.hexagon svg g path {
+  fill: white;
+  opacity: 70%;
+}
+
+#matlab {
+  opacity: 70%;
+  width: min(8vw, 4.5vh);
+  height: min(8vw, 4.5vh);
+}
+
+@media only screen and (max-width: 625px) {
+  #about-me {
+    margin-left: 25px;
+  }
+}

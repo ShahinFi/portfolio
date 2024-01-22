@@ -66,7 +66,7 @@ a:visited {
   z-index: 100;
   display: flex;
   height: 80px;
-  width: 100%;
+  width: 100vw;
   background-color: transparent;
 }
 
@@ -75,7 +75,6 @@ a:visited {
 }
 
 #logo-container-base {
-  flex: 5;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -163,10 +162,48 @@ a:visited {
   }
 }
 
+#links-container {
+  height: 30px;
+  flex: 1;
+  margin-left: 35px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.social-media-links {
+  border: solid rgb(90, 127, 206) 2px;
+  border-radius: 5px;
+  background-color: rgb(9, 9, 46);
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#link-google-scholar {
+  margin-left: 10px;
+}
+
+#icon-github,
+#icon-google-scholar {
+  height: 100%;
+  width: auto;
+}
+
+.social-media-links:hover {
+  border: solid #5dc3ce 2px;
+  box-shadow: 0px 0px 4px 3px rgb(86, 29, 255),
+    inset 0px 0px 4px 3px rgb(86, 29, 255);
+}
+
 #navbar {
   font-size: 15px;
   width: 500px;
   margin-right: 20px;
+  justify-self: flex-end;
   display: flex;
 }
 
@@ -370,13 +407,12 @@ a:visited {
   }
 }
 
-@media only screen and (max-width: 625px) {
+@media only screen and (max-width: 770px) {
   :root {
     --mesh-perspective-vw: 187.5px;
     --mesh-height-vw: 281px;
     --wormhole-vw: 197px;
   }
-
   #logo-container {
     width: 50px;
     height: 50px;
@@ -404,7 +440,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     align-items: end;
-    height: 260px;
+    height: 300px;
   }
 
   #navbar-list {

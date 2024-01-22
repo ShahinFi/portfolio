@@ -21,10 +21,10 @@ function topBarAnimationMain() {
   navLinks.forEach(function (navLink) {
     navLink.style.backgroundColor = '#011826'
   })
-  if (window.innerWidth <= 625) {
+  if (window.innerWidth <= 770) {
     topBar.style.transform = 'translateY(0%)'
   }
-  if (window.innerWidth > 625) {
+  if (window.innerWidth > 770) {
     if (currentScrollPos > 35) {
       topBar.style.backgroundColor = 'transparent'
       topBar.style.backdropFilter = 'blur(5px)'
